@@ -1,0 +1,522 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sparrow MD — Aesthetics, thoughtfully done. | Kitsilano, Vancouver</title>
+<meta name="description" content="Sparrow MD is a calm, physician-guided medical aesthetics studio in Kitsilano, Vancouver. West-coast natural, medically precise.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --sage:#8a9a7f;
+    --sage-deep:#5f6f56;
+    --sage-soft:#e7ece2;
+    --stone:#e9e2d8;
+    --stone-deep:#b9aa96;
+    --cream:#f6f3ee;
+    --ink:#33352f;
+    --ink-soft:#5c5e56;
+    --white:#fdfcfa;
+    --serif:'Cormorant Garamond',Georgia,serif;
+    --sans:'Inter',system-ui,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:var(--sans);
+    color:var(--ink);
+    background:var(--cream);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,h4{font-family:var(--serif);font-weight:500;line-height:1.1;letter-spacing:-.01em}
+  a{color:inherit;text-decoration:none}
+  img{display:block;max-width:100%}
+  .wrap{max-width:1280px;margin:0 auto;padding:0 clamp(22px,5vw,72px)}
+  .eyebrow{
+    font-family:var(--sans);
+    font-size:.72rem;
+    letter-spacing:.28em;
+    text-transform:uppercase;
+    color:var(--sage-deep);
+    font-weight:500;
+  }
+
+  /* ---------- NAV ---------- */
+  header{
+    position:fixed;top:0;left:0;width:100%;z-index:100;
+    transition:background .5s ease, box-shadow .5s ease, padding .5s ease;
+    padding:26px 0;
+  }
+  header.scrolled{
+    background:rgba(246,243,238,.85);
+    backdrop-filter:blur(14px);
+    box-shadow:0 1px 0 rgba(51,53,47,.07);
+    padding:16px 0;
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between}
+  .logo{font-family:var(--serif);font-size:1.5rem;letter-spacing:.02em;display:flex;align-items:center;gap:.5rem}
+  .logo .dot{width:7px;height:7px;border-radius:50%;background:var(--sage);display:inline-block;margin-bottom:14px}
+  .logo small{font-family:var(--sans);font-size:.58rem;letter-spacing:.3em;text-transform:uppercase;color:var(--ink-soft);display:block;margin-top:-4px}
+  .nav-links{display:flex;gap:38px;align-items:center}
+  .nav-links a{font-size:.82rem;letter-spacing:.04em;color:var(--ink-soft);position:relative;transition:color .3s}
+  .nav-links a::after{content:'';position:absolute;left:0;bottom:-4px;width:0;height:1px;background:var(--sage-deep);transition:width .35s ease}
+  .nav-links a:hover{color:var(--ink)}
+  .nav-links a:hover::after{width:100%}
+  .btn{
+    display:inline-block;
+    font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;font-weight:500;
+    padding:14px 28px;border-radius:100px;
+    background:var(--ink);color:var(--white);
+    transition:transform .4s cubic-bezier(.2,.8,.2,1), background .4s;
+    border:1px solid var(--ink);
+  }
+  .btn:hover{background:var(--sage-deep);border-color:var(--sage-deep);transform:translateY(-2px)}
+  .btn-outline{background:transparent;color:var(--ink);border:1px solid rgba(51,53,47,.25)}
+  .btn-outline:hover{background:var(--ink);color:var(--white);border-color:var(--ink)}
+  .nav-cta{display:flex;gap:14px;align-items:center}
+  .burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px}
+  .burger span{width:24px;height:1.5px;background:var(--ink);transition:.3s}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:flex-end;padding-bottom:6vh;overflow:hidden}
+  .hero-bg{position:absolute;inset:0;z-index:-2}
+  .hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 30%}
+  .hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(246,243,238,.35) 0%,rgba(246,243,238,.05) 30%,rgba(51,53,47,.28) 100%)}
+  .hero-content{max-width:920px;position:relative;z-index:2}
+  .hero h1{
+    font-size:clamp(3rem,9vw,7.2rem);
+    color:var(--white);
+    font-weight:400;
+    line-height:.98;
+    text-shadow:0 2px 40px rgba(51,53,47,.25);
+    margin:26px 0 30px;
+  }
+  .hero h1 em{font-style:italic;color:var(--sage-soft)}
+  .hero .eyebrow{color:var(--sage-soft)}
+  .hero-sub{color:rgba(253,252,250,.92);font-size:clamp(1rem,1.6vw,1.18rem);max-width:520px;font-weight:300;margin-bottom:36px}
+  .hero-actions{display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+  .hero .btn{background:var(--white);color:var(--ink);border-color:var(--white)}
+  .hero .btn:hover{background:var(--sage-deep);color:var(--white);border-color:var(--sage-deep)}
+  .hero .phone-link{color:var(--white);font-size:.9rem;letter-spacing:.05em;display:flex;align-items:center;gap:8px}
+  .hero .phone-link span{opacity:.7;font-size:.72rem;text-transform:uppercase;letter-spacing:.2em}
+
+  /* reveal */
+  .reveal{opacity:0;transform:translateY(34px);transition:opacity 1s cubic-bezier(.2,.7,.2,1),transform 1s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal.d1{transition-delay:.12s}.reveal.d2{transition-delay:.24s}.reveal.d3{transition-delay:.36s}.reveal.d4{transition-delay:.48s}
+
+  /* ---------- MARQUEE STRIP ---------- */
+  .strip{background:var(--sage-deep);color:var(--sage-soft);padding:22px 0;overflow:hidden}
+  .strip-track{display:flex;gap:60px;white-space:nowrap;animation:marquee 32s linear infinite;font-family:var(--serif);font-size:1.35rem;font-style:italic}
+  .strip-track span{display:flex;align-items:center;gap:60px;opacity:.9}
+  .strip-track span::after{content:'✦';font-style:normal;opacity:.5;font-size:.8rem}
+  @keyframes marquee{to{transform:translateX(-50%)}}
+
+  /* ---------- SECTION SHELL ---------- */
+  section{position:relative}
+  .pad{padding:clamp(90px,12vw,160px) 0}
+  .section-head{max-width:640px;margin-bottom:64px}
+  .section-head h2{font-size:clamp(2.2rem,5vw,3.6rem);margin:18px 0;font-weight:400}
+  .section-head h2 em{font-style:italic;color:var(--sage-deep)}
+  .section-head p{color:var(--ink-soft);font-weight:300;font-size:1.05rem}
+
+  /* ---------- SERVICES ---------- */
+  #services{background:var(--white)}
+  .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1px;background:rgba(51,53,47,.08);border:1px solid rgba(51,53,47,.08)}
+  .service{
+    background:var(--white);padding:44px 38px;
+    transition:background .5s ease;
+    position:relative;min-height:280px;display:flex;flex-direction:column;
+  }
+  .service:hover{background:var(--sage-soft)}
+  .service .num{font-family:var(--serif);font-style:italic;color:var(--stone-deep);font-size:1.1rem;margin-bottom:auto}
+  .service h3{font-size:1.65rem;margin:0 0 12px;font-weight:500}
+  .service p{color:var(--ink-soft);font-size:.94rem;font-weight:300}
+  .service .arrow{margin-top:22px;font-size:.8rem;letter-spacing:.15em;text-transform:uppercase;color:var(--sage-deep);opacity:0;transform:translateX(-8px);transition:.4s;display:flex;align-items:center;gap:8px}
+  .service:hover .arrow{opacity:1;transform:none}
+
+  /* ---------- ABOUT / PHILOSOPHY ---------- */
+  #about{background:var(--cream)}
+  .about-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(40px,7vw,100px);align-items:center}
+  .about-imgs{position:relative}
+  .about-imgs .main{border-radius:6px;overflow:hidden;box-shadow:0 30px 80px rgba(51,53,47,.14)}
+  .about-imgs .main img{aspect-ratio:4/5;object-fit:cover;width:100%}
+  .about-imgs .float{position:absolute;bottom:-46px;right:-30px;width:46%;border-radius:6px;overflow:hidden;box-shadow:0 20px 50px rgba(51,53,47,.18);border:6px solid var(--cream)}
+  .about-imgs .float img{aspect-ratio:1/1;object-fit:cover;width:100%}
+  .about-text h2{font-size:clamp(2rem,4.5vw,3.4rem);margin:20px 0;font-weight:400;line-height:1.08}
+  .about-text h2 em{font-style:italic;color:var(--sage-deep)}
+  .about-text p{color:var(--ink-soft);margin-bottom:20px;font-weight:300;font-size:1.05rem}
+  .about-sign{font-family:var(--serif);font-style:italic;font-size:1.4rem;color:var(--ink);margin-top:12px}
+  .about-sign small{display:block;font-family:var(--sans);font-style:normal;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-soft);margin-top:6px}
+  .pillars{display:flex;gap:34px;margin-top:38px;flex-wrap:wrap}
+  .pillar{flex:1;min-width:130px}
+  .pillar h4{font-family:var(--serif);font-size:1.2rem;color:var(--sage-deep);margin-bottom:6px}
+  .pillar p{font-size:.88rem;color:var(--ink-soft);margin:0}
+
+  /* ---------- TESTIMONIALS ---------- */
+  #voices{background:var(--sage-deep);color:var(--white)}
+  #voices .eyebrow{color:var(--sage-soft)}
+  #voices .section-head h2{color:var(--white)}
+  #voices .section-head h2 em{color:var(--sage-soft)}
+  .quotes{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:34px}
+  .quote{border-top:1px solid rgba(231,236,226,.28);padding-top:28px}
+  .quote p{font-family:var(--serif);font-style:italic;font-size:1.45rem;line-height:1.35;color:#eef1e9;margin-bottom:22px;font-weight:400}
+  .quote cite{font-style:normal;font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;color:var(--sage-soft)}
+  .voices-note{margin-top:70px;display:flex;flex-wrap:wrap;gap:14px 46px;align-items:center;border-top:1px solid rgba(231,236,226,.2);padding-top:36px}
+  .voices-note span{font-family:var(--serif);font-style:italic;font-size:1.15rem;color:rgba(238,241,233,.85)}
+
+  /* ---------- CONTACT ---------- */
+  #contact{background:var(--cream)}
+  .contact-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(40px,7vw,90px)}
+  .contact-left h2{font-size:clamp(2.2rem,5vw,3.8rem);margin:18px 0 26px;font-weight:400}
+  .contact-left h2 em{font-style:italic;color:var(--sage-deep)}
+  .contact-left p{color:var(--ink-soft);font-weight:300;max-width:440px;margin-bottom:40px;font-size:1.05rem}
+  .phone-big{display:inline-flex;align-items:baseline;gap:14px;margin-bottom:38px}
+  .phone-big a{font-family:var(--serif);font-size:clamp(2rem,4.5vw,3rem);color:var(--ink);transition:color .3s}
+  .phone-big a:hover{color:var(--sage-deep)}
+  .phone-big .label{font-size:.7rem;letter-spacing:.25em;text-transform:uppercase;color:var(--ink-soft)}
+  .info-row{display:flex;flex-wrap:wrap;gap:36px;border-top:1px solid rgba(51,53,47,.12);padding-top:30px}
+  .info-block .lbl{font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--sage-deep);margin-bottom:8px}
+  .info-block p{font-size:.95rem;color:var(--ink);font-weight:300;margin:0}
+  .contact-card{background:var(--white);border-radius:8px;padding:44px;box-shadow:0 30px 70px rgba(51,53,47,.09)}
+  .contact-card h3{font-size:1.7rem;margin-bottom:6px;font-weight:500}
+  .contact-card .sub{color:var(--ink-soft);font-size:.9rem;font-weight:300;margin-bottom:28px}
+  .field{margin-bottom:20px}
+  .field label{display:block;font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:8px}
+  .field input,.field select,.field textarea{
+    width:100%;padding:14px 16px;border:1px solid rgba(51,53,47,.18);border-radius:5px;
+    font-family:var(--sans);font-size:.92rem;background:var(--cream);color:var(--ink);transition:border .3s,background .3s;
+  }
+  .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--sage-deep);background:var(--white)}
+  .contact-card .btn{width:100%;text-align:center;margin-top:8px}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--ink);color:rgba(253,252,250,.7);padding:70px 0 40px}
+  .foot-top{display:flex;justify-content:space-between;flex-wrap:wrap;gap:40px;padding-bottom:44px;border-bottom:1px solid rgba(253,252,250,.12)}
+  .foot-brand .logo{color:var(--white);font-size:1.8rem}
+  .foot-brand small{color:rgba(253,252,250,.6)}
+  .foot-brand p{max-width:280px;font-weight:300;font-size:.92rem;margin-top:16px}
+  .foot-links{display:flex;gap:70px;flex-wrap:wrap}
+  .foot-col h5{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--sage-soft);margin-bottom:16px;font-weight:600;font-family:var(--sans)}
+  .foot-col a,.foot-col p{display:block;color:rgba(253,252,250,.7);font-size:.9rem;margin-bottom:10px;font-weight:300;transition:color .3s}
+  .foot-col a:hover{color:var(--white)}
+  .foot-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;padding-top:32px;font-size:.78rem;color:rgba(253,252,250,.5)}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media(max-width:900px){
+    .about-grid{grid-template-columns:1fr}
+    .about-imgs{max-width:440px;margin:0 auto 60px}
+    .contact-grid{grid-template-columns:1fr}
+    .nav-links{
+      position:fixed;inset:0 0 0 auto;width:min(80%,340px);height:100vh;background:var(--cream);
+      flex-direction:column;justify-content:center;padding:60px;gap:28px;transform:translateX(100%);
+      transition:transform .5s cubic-bezier(.2,.8,.2,1);box-shadow:-20px 0 60px rgba(51,53,47,.15);
+    }
+    .nav-links.open{transform:none}
+    .nav-links a{font-size:1.15rem}
+    .burger{display:flex}
+    .nav-cta .btn{display:none}
+    body.menu-open{overflow:hidden}
+    .burger.active span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+    .burger.active span:nth-child(2){opacity:0}
+    .burger.active span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+  }
+  @media(max-width:560px){
+    .contact-card{padding:32px 26px}
+    .hero{min-height:92vh}
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header id="header">
+  <div class="wrap nav">
+    <a href="#top" class="logo">Sparrow<span class="dot"></span>MD
+      <small>Medical Aesthetics</small>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#services">Services</a>
+      <a href="#about">Philosophy</a>
+      <a href="#voices">Voices</a>
+      <a href="#contact">Visit</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="#contact" class="btn">Book a consultation</a>
+      <div class="burger" id="burger"><span></span><span></span><span></span></div>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-bg">
+    <img src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=2000&q=80" alt="Calm natural spa interior with soft light">
+  </div>
+  <div class="wrap hero-content">
+    <span class="eyebrow reveal">Kitsilano · Vancouver, BC</span>
+    <h1 class="reveal d1">Aesthetics,<br><em>thoughtfully</em> done.</h1>
+    <p class="hero-sub reveal d2">A calm, physician-guided medical aesthetics studio — where west-coast ease meets clinical precision. No pressure. No excess. Only what suits you.</p>
+    <div class="hero-actions reveal d3">
+      <a href="#contact" class="btn">Book a consultation</a>
+      <a href="tel:6047576404" class="phone-link"><span>Call</span> 604&nbsp;757&nbsp;6404</a>
+    </div>
+  </div>
+</section>
+
+<!-- STRIP -->
+<div class="strip" aria-hidden="true">
+  <div class="strip-track">
+    <span>Physician-led</span><span>Natural results</span><span>Unrushed consultations</span><span>West-coast calm</span><span>Medically precise</span>
+    <span>Physician-led</span><span>Natural results</span><span>Unrushed consultations</span><span>West-coast calm</span><span>Medically precise</span>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section id="services" class="pad">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow reveal">Our care</span>
+      <h2 class="reveal d1">Treatments chosen <em>for you</em>, not for everyone.</h2>
+      <p class="reveal d2">Every plan begins with a conversation and an honest assessment. We recommend only what serves your skin and your goals — and we're happy to say when nothing is needed.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service reveal">
+        <div class="num">01</div>
+        <h3>Botox &amp; Anti-Wrinkle</h3>
+        <p>Softening expression lines while keeping your face expressive and yours. Measured, refined, never frozen.</p>
+        <div class="arrow">Learn more →</div>
+      </div>
+      <div class="service reveal d1">
+        <div class="num">02</div>
+        <h3>Dermal Fillers</h3>
+        <p>Restoring subtle volume and structure with an artist's restraint — balance and proportion above all.</p>
+        <div class="arrow">Learn more →</div>
+      </div>
+      <div class="service reveal d2">
+        <div class="num">03</div>
+        <h3>Laser &amp; Skin</h3>
+        <p>Resurfacing, pigment correction and glow — advanced technology tuned to your skin type and season.</p>
+        <div class="arrow">Learn more →</div>
+      </div>
+      <div class="service reveal">
+        <div class="num">04</div>
+        <h3>Medical Facials</h3>
+        <p>Results-driven and deeply relaxing. Clinical actives delivered in a quiet, unhurried setting.</p>
+        <div class="arrow">Learn more →</div>
+      </div>
+      <div class="service reveal d1">
+        <div class="num">05</div>
+        <h3>Skin Consultations</h3>
+        <p>A thoughtful assessment and a clear, personalised roadmap — the honest starting point for everything.</p>
+        <div class="arrow">Learn more →</div>
+      </div>
+      <div class="service reveal d2" style="background:var(--sage-soft)">
+        <div class="num" style="color:var(--sage-deep)">—</div>
+        <h3 style="color:var(--sage-deep)">Not sure where to start?</h3>
+        <p>Begin with a consultation. We'll listen first, then plan.</p>
+        <a href="#contact" class="arrow" style="opacity:1;transform:none">Book a consultation →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="pad">
+  <div class="wrap about-grid">
+    <div class="about-imgs reveal">
+      <div class="main"><img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1200&q=80" alt="Serene skincare and natural botanicals"></div>
+      <div class="float"><img src="https://images.unsplash.com/photo-1552693673-1bf958298935?auto=format&fit=crop&w=800&q=80" alt="Soft natural detail"></div>
+    </div>
+    <div class="about-text">
+      <span class="eyebrow reveal">Our philosophy</span>
+      <h2 class="reveal d1">Precision, held gently. <em>Beauty that still looks like you.</em></h2>
+      <p class="reveal d2">Sparrow MD was founded on a quiet conviction: that medical aesthetics should feel calm, considered and completely personal. We are physician-led, evidence-guided, and unhurried — because good decisions rarely happen under pressure.</p>
+      <p class="reveal d2">We believe in the least intervention that achieves the most natural result. You'll never be sold a treatment you don't need. Instead, you'll be listened to, assessed with care, and guided by expertise.</p>
+      <div class="pillars">
+        <div class="pillar reveal d3"><h4>Physician-led</h4><p>Every plan overseen by a medical professional.</p></div>
+        <div class="pillar reveal d3"><h4>Natural first</h4><p>Refined outcomes that honour your features.</p></div>
+        <div class="pillar reveal d4"><h4>Unrushed</h4><p>Time to ask, understand and decide.</p></div>
+      </div>
+      <div class="about-sign reveal d4" style="margin-top:34px">Aesthetics, thoughtfully done.
+        <small>The Sparrow MD approach</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VOICES -->
+<section id="voices" class="pad">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow reveal">In their words</span>
+      <h2 class="reveal d1">Trusted by those who value <em>restraint</em>.</h2>
+    </div>
+    <div class="quotes">
+      <div class="quote reveal">
+        <p>"I felt genuinely heard. Nothing was rushed, and I left looking like a rested version of myself — not someone else."</p>
+        <cite>— Client, Kitsilano</cite>
+      </div>
+      <div class="quote reveal d1">
+        <p>"The most honest consultation I've had. They talked me out of something I didn't need. That's why I keep coming back."</p>
+        <cite>— Client, West Vancouver</cite>
+      </div>
+      <div class="quote reveal d2">
+        <p>"Calm, clinical and completely unpretentious. It feels less like a clinic and more like a retreat with real expertise behind it."</p>
+        <cite>— Client, Vancouver</cite>
+      </div>
+    </div>
+    <div class="voices-note reveal d2">
+      <span>Physician-guided</span>
+      <span>Referred by word of mouth</span>
+      <span>Natural, lasting results</span>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="pad">
+  <div class="wrap contact-grid">
+    <div class="contact-left">
+      <span class="eyebrow reveal">Visit us</span>
+      <h2 class="reveal d1">Begin with a <em>conversation</em>.</h2>
+      <p class="reveal d2">The best outcomes start with understanding. Book a consultation and we'll take the time to learn your goals before recommending anything at all.</p>
+      <div class="phone-big reveal d2">
+        <span class="label">Call</span>
+        <a href="tel:6047576404">604&nbsp;757&nbsp;6404</a>
+      </div>
+      <div class="info-row reveal d3">
+        <div class="info-block">
+          <div class="lbl">Location</div>
+          <p>Kitsilano<br>Vancouver, BC</p>
+        </div>
+        <div class="info-block">
+          <div class="lbl">Approach</div>
+          <p>Physician-guided<br>By appointment</p>
+        </div>
+        <div class="info-block">
+          <div class="lbl">Enquiries</div>
+          <p><a href="tel:6047576404" style="color:var(--sage-deep)">604 757 6404</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="contact-card reveal d2">
+      <h3>Book a consultation</h3>
+      <p class="sub">We'll be in touch to confirm a time that suits you.</p>
+      <form id="bookForm">
+        <div class="field">
+          <label for="name">Full name</label>
+          <input type="text" id="name" name="name" placeholder="Your name" required>
+        </div>
+        <div class="field">
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" name="phone" placeholder="Best number to reach you" required>
+        </div>
+        <div class="field">
+          <label for="interest">I'm interested in</label>
+          <select id="interest" name="interest">
+            <option>Skin consultation</option>
+            <option>Botox &amp; anti-wrinkle</option>
+            <option>Dermal fillers</option>
+            <option>Laser &amp; skin</option>
+            <option>Medical facial</option>
+            <option>Not sure yet</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="msg">Anything we should know</label>
+          <textarea id="msg" name="msg" rows="3" placeholder="Optional"></textarea>
+        </div>
+        <button type="submit" class="btn">Request my consultation</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <div class="logo">Sparrow<span class="dot" style="background:var(--sage-soft)"></span>MD
+          <small>Medical Aesthetics</small>
+        </div>
+        <p>A calm, physician-guided medical aesthetics studio in Kitsilano, Vancouver. West-coast natural, medically precise.</p>
+      </div>
+      <div class="foot-links">
+        <div class="foot-col">
+          <h5>Explore</h5>
+          <a href="#services">Services</a>
+          <a href="#about">Philosophy</a>
+          <a href="#voices">Voices</a>
+          <a href="#contact">Visit</a>
+        </div>
+        <div class="foot-col">
+          <h5>Care</h5>
+          <a href="#services">Botox &amp; Anti-Wrinkle</a>
+          <a href="#services">Dermal Fillers</a>
+          <a href="#services">Laser &amp; Skin</a>
+          <a href="#services">Medical Facials</a>
+        </div>
+        <div class="foot-col">
+          <h5>Contact</h5>
+          <a href="tel:6047576404">604 757 6404</a>
+          <p>Kitsilano, Vancouver, BC</p>
+          <a href="#contact">Book a consultation</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="yr"></span> Sparrow MD · Aesthetics, thoughtfully done.</span>
+      <span>Physician-led medical aesthetics · Vancouver</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Sticky nav
+  const header=document.getElementById('header');
+  window.addEventListener('scroll',()=>{
+    header.classList.toggle('scrolled',window.scrollY>40);
+  });
+
+  // Mobile menu
+  const burger=document.getElementById('burger');
+  const navLinks=document.getElementById('navLinks');
+  burger.addEventListener('click',()=>{
+    navLinks.classList.toggle('open');
+    burger.classList.toggle('active');
+    document.body.classList.toggle('menu-open');
+  });
+  navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+    navLinks.classList.remove('open');
+    burger.classList.remove('active');
+    document.body.classList.remove('menu-open');
+  }));
+
+  // Scroll reveal
+  const io=new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}
+    });
+  },{threshold:.14,rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // Form
+  document.getElementById('bookForm').addEventListener('submit',function(e){
+    e.preventDefault();
+    const btn=this.querySelector('button');
+    btn.textContent='Thank you — we\u2019ll be in touch';
+    btn.style.background='var(--sage-deep)';
+    btn.style.borderColor='var(--sage-deep)';
+    setTimeout(()=>{this.reset();btn.textContent='Request my consultation';btn.style.background='';btn.style.borderColor='';},3200);
+  });
+
+  document.getElementById('yr').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>

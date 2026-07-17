@@ -145,7 +145,7 @@ nav.scrolled .logo img{height:40px}
 /* blog */
 .blog{background:var(--white)}
 .blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:34px;margin-top:56px}
-.blog-card{cursor:pointer;background:var(--bg);border:1px solid var(--line);border-radius:4px;overflow:hidden;transition:.5s ease}
+.blog-card{cursor:pointer;display:block;color:inherit;text-decoration:none;background:var(--bg);border:1px solid var(--line);border-radius:4px;overflow:hidden;transition:.5s ease}
 .blog-card:hover{transform:translateY(-6px);box-shadow:0 24px 60px rgba(40,40,40,.12)}
 .blog-card .ph{aspect-ratio:16/10;overflow:hidden}
 .blog-card .ph img{width:100%;height:100%;object-fit:cover;transition:.7s ease}
@@ -230,7 +230,7 @@ footer .logo img{height:52px;filter:brightness(0) invert(1);opacity:.92}
     <a class="link" href="#team">Team</a>
     <a class="link" href="#services">Services</a>
     <a class="link" href="#testimonials">Reviews</a>
-    <a class="link" href="#blog">Education</a>
+    <a class="link" href="blog/index.html">Education</a>
     <a class="link" href="#contact">Contact</a>
     <div class="nav-social">
       <a href="https://www.instagram.com/sparrowmd.inc/" target="_blank" rel="noopener">IG</a>
@@ -377,7 +377,7 @@ footer .logo img{height:52px;filter:brightness(0) invert(1);opacity:.92}
     </div>
     <div class="blog-grid" id="blogGrid"></div>
     <div class="blog-more reveal">
-      <button class="btn btn-outline" onclick="openArticle('More on our blog','We regularly publish guides on natural results, treatment options and skin health. New articles are added often — check back soon.')">Read more on our blog</button>
+      <a class="btn btn-outline" href="blog/index.html">View all articles</a>
     </div>
   </div>
 </section>
@@ -428,7 +428,7 @@ footer .logo img{height:52px;filter:brightness(0) invert(1);opacity:.92}
           <a href="#team">Team</a>
           <a href="#services">Services</a>
           <a href="#testimonials">Reviews</a>
-          <a href="#blog">Education</a>
+          <a href="blog/index.html">Education</a>
         </div>
         <div class="foot-col">
           <h4>Visit</h4>
@@ -558,12 +558,12 @@ const testimonials=[
 ];
 
 const blog=[
-  ['A Guide to Dermal Fillers','Understanding filler treatments and how to achieve the most natural results.','https://sparrowmd.ca/wp-content/uploads/2025/09/A-Guide-to-Dermal-Fillers-understanding-filler-treatment-best-natural-results-lips-chin-jawline-tear-trough-nose-non-surgical-hyaluronic-acid-fillers-1000x411.png.webp','Dermal fillers can restore volume, refine contours and smooth lines. This guide walks through the areas most commonly treated and what to expect from a natural-looking result.'],
-  ['Dermal Fillers vs Botox: Which Is Better for Me?','Two of the most popular treatments — and how to know which one fits your goals.','https://sparrowmd.ca/wp-content/uploads/2024/06/Dermal-Fillers-vs-Botox-Which-is-the-Better-Option-for-Me-1000x618.jpg.webp','Botox relaxes muscles to soften dynamic lines, while fillers restore volume and structure. Often the best approach uses each where it works best — assessed during your consultation.'],
-  ['Ultherapy for Facial Contouring: How It Works','A closer look at non-surgical skin tightening with ultrasound energy.','https://sparrowmd.ca/wp-content/uploads/2025/08/Ultherapy-for-facial-contouring-guide-how-it-works-best-non-surgical-skin-tightening-facial-treatment-medical-grade-skincare-sparrow-Md-vnacouver-1000x667.png.webp','Ultherapy uses focused ultrasound to stimulate collagen deep within the skin, gradually lifting and tightening over time — with no downtime.'],
-  ['Never Look Overdone: Top 6 Tips for Natural Results','Our approach to conservative, balanced enhancements.','https://sparrowmd.ca/wp-content/uploads/2025/11/never-look-overdone-top-6-tips-natural-results-Medical-clinic-Vancouver-safety-conservative-enhancements-Sparrow-MD-1024x683.png.webp','Natural results come from restraint, anatomy-led planning and a long-term approach. Here are the principles our physicians use to keep results looking like the best version of you.'],
-  ['Botox for Men: A Guide to Treatment','What men should know about wrinkle relaxers and natural anti-ageing.','https://sparrowmd.ca/wp-content/uploads/2025/08/Botox-for-men-guide-to-treatment-wrinkle-relaxers-best-natural-results-anti-aging-clinic-Vancouver-sparrow-Md-Dysport-Xeomin-neuromodulators--1000x667.png.webp','Neuromodulators for men are tailored to preserve masculine features and expression. This guide covers common treatment areas and realistic expectations.'],
-  ['Skin Boosters: Top 5 Facts','Hydration and skin quality from within — the essentials.','https://sparrowmd.ca/wp-content/uploads/2025/08/Skin-boosters-top-5-facts-skin-vive-juvederm-Netflix-exosomes-perm-top-skincare-clinic-Vancouver-sparrow-Md-best-medical-aesthetics-natural-results-glowy-hydrated-skin-1000x667.png.webp','Skin boosters deliver deep hydration to improve glow, smoothness and overall skin quality. Learn what they are and how they differ from traditional fillers.']
+  ["What Are Dermal Fillers?","Dermal fillers are a popular, non-invasive treatment designed to restore volume, smooth wrinkles, and enhance…","https://sparrowmd.ca/wp-content/uploads/2025/09/A-Guide-to-Dermal-Fillers-understanding-filler-treatment-best-natural-results-lips-chin-jawline-tear-trough-nose-non-surgical-hyaluronic-acid-fillers-1024x421.png","understanding-fillers"],
+  ["Botox vs Dermal Fillers: Which Is Right for You?","How do Botox and dermal fillers differ in their role to facial rejuvenation? A clear comparison to help you choose.","https://sparrowmd.ca/wp-content/uploads/2025/08/Botox-vs-fillers-comparison-which-treatment-is-best-for-you-top-natural-results-clinic-sparrow-Md-Vancouver-anti-aging-rejuvenation-regeneration-restoration-1024x683.png","botox-vs-dermal-fillers"],
+  ["Never Look Overdone: Top 6 Tips","In medical aesthetics, the most flattering results are often the ones that look completely natural.","https://sparrowmd.ca/wp-content/uploads/2025/11/never-look-overdone-top-6-tips-natural-results-Medical-clinic-Vancouver-safety-conservative-enhancements-Sparrow-MD.png","never-look-overdone-top-six-tips"],
+  ["Can Men Get Botox?","A common question we hear: can men get Botox? The answer is absolutely yes — here's what to know.","https://sparrowmd.ca/wp-content/uploads/2025/10/can-men-get-botox-injectables-safe-needles-Vancouver-medical-clinic-natural-enhancements-1024x683.png","can-men-get-botox"],
+  ["What Is Red Light Therapy? A Beginner's Guide","How does red light LED therapy enhance skin health without heat or damage? The essentials, explained.","https://sparrowmd.ca/wp-content/uploads/2025/08/Red-light-therapy-guide-to-treatment-best-natural-results-anti-aging-skincare-clinic-sparrow-Md-Vancouver-physician-led.png","guide-to-red-light-therapy"],
+  ["Lip Filler Guide: Top 10 FAQs","The most common questions about natural lip enhancement, answered by our physicians.","https://sparrowmd.ca/wp-content/uploads/2025/08/Lip-filler-top-10-frequently-asked-questions-FAQs-common-concerns-natural-lip-enhancement-best-natural-results-clinic-sparrow-Md-Vancouver-physician-safety-never-overdone-ha-fillers-1024x683.png","lip-filler-top-10-faqs"]
 ];
 
 /* BUILD SERVICES */
@@ -593,9 +593,8 @@ testimonials.forEach(t=>{
 /* BUILD BLOG */
 const bg=document.getElementById('blogGrid');
 blog.forEach(b=>{
-  const d=document.createElement('div');d.className='blog-card reveal';
-  d.innerHTML=`<div class="ph"><img src="${b[2]}" alt="${b[0]}"></div><div class="body"><h3>${b[0]}</h3><p>${b[1]}</p><div class="rm">Read more →</div></div>`;
-  d.addEventListener('click',()=>openArticle(b[0],b[3]));
+  const d=document.createElement('a');d.className='blog-card reveal';d.href='blog/'+b[3]+'.html';
+  d.innerHTML=`<div class="ph"><img src="${b[2]}" alt="${b[0]}"></div><div class="body"><h3>${b[0]}</h3><p>${b[1]}</p><div class="rm">Read article →</div></div>`;
   bg.appendChild(d);
 });
 
@@ -630,6 +629,9 @@ function openBooking(){
   document.getElementById('bookForm').reset();
   showOverlay('bookOverlay');
 }
+/* open booking when arriving with #book (e.g. from a blog article Book button) */
+if(location.hash==='#book'){setTimeout(openBooking,300);}
+window.addEventListener('hashchange',()=>{if(location.hash==='#book')openBooking();});
 document.getElementById('bookForm').addEventListener('submit',e=>{
   e.preventDefault();
   document.getElementById('bookFormWrap').style.display='none';
